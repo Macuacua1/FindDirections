@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     FindDirections
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Ponto de Partida</ion-label>
+      <ion-input type="text" [(ngModel)]="Start"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Ponto de Chegada</ion-label>
+      <ion-input type="text" [(ngModel)]="End"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Travel Mode:</ion-label>
+      <ion-select [(ngModel)]="travel">
+        <ion-option value="DRIVING">Drivind</ion-option>
+        <ion-option value="WALKING">Walking</ion-option>
+        <ion-option value="BICYCLING">Bicycling</ion-option>
+        <ion-option value="TRANSIT">Transit</ion-option>
+      </ion-select>
+    </ion-item>
+
+<button ion-button full (click)="calculateAndDisplayRoute()">Get Direction</button>
+    <button ion-button full (click)="initMap()">Calculate Distance</button>
+  </ion-list>
+  <div>
+    <strong>Results</strong>
+  </div>
+  <div id="output"></div>
+
+  <div id="map"></div>
+  <!--{{Start}}-{{End}}-->
+</ion-content>
